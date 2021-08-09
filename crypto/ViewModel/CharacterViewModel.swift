@@ -21,8 +21,6 @@ class CharacterViewModel: ObservableObject {
         
         URLSession.shared.dataTask(with: url) { data, res, error in
             do {
-                
-            
                 if let data = data {
                     print(data)
                     let result = try JSONDecoder().decode([Character].self, from : data)
@@ -34,7 +32,6 @@ class CharacterViewModel: ObservableObject {
             } catch (let error) {
                 print(error)
             }
-            
         }.resume()
     }
 }
